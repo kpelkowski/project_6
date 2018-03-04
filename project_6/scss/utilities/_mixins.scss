@@ -1,0 +1,37 @@
+//=============================================================================
+// Mixin styles
+//=============================================================================
+
+//import fonts if defined
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+//calculate em values
+
+@function em($target, $context: $base__font-size) {
+  @return($target / $context) * 1em;
+}
+
+//media query Mixin
+
+ @mixin mq($point) {
+   @if $point == "medium" {
+     @media(min-width: $break + 1) {
+       @content;
+     }
+   }
+   @else {
+     @error "No value could be retrieved for #{$point}";
+   }
+ }
+
+ //flex mixins
+
+ @mixin flex($flex, $flex-direction: null, $wrap: null, $justify: null) {
+   display: $flex;
+   flex-direction: $flex-direction;
+   flex-wrap: $wrap;
+   justify-content: $justify;
+ }

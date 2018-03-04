@@ -1,0 +1,38 @@
+//=============================================================================
+//Base Styles
+//=============================================================================
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+body {
+  font-family: $font-family--primary;
+  @include flex($flex: flex, $flex-direction: column)
+}
+
+p {
+  margin-right: 8%;
+  margin-left: 8%;
+  font-size: em(18px);
+  font-weight: bold;
+  line-height: 200%;
+  @include mq(medium) {
+    margin-right: 22%;
+    margin-left: 22%;
+  }
+}
+
+.video-wrapper {
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  display: block;
+  @include mq(medium) {
+    margin-bottom: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
